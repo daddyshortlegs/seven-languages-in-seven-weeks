@@ -3,7 +3,7 @@
 
 loop() ->
   receive
-    3 -> io:format("bang~n"), exit({rouulette,die,at,erlang:time()});
+    3 -> io:format("bang~n"), exit({roulette,die,at,erlang:time()});
     _ -> io:format("click~n"), loop()
   end.
 
