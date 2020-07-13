@@ -10,8 +10,8 @@ all_ones_test() ->
 spare_test() ->
   ?assertEqual(20, score_rolls([2, 8, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])).
 
-%%strike_test() ->
-%%  ?assertEqual(24, score_rolls([10, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])).
+strike_test() ->
+  ?assertEqual(24, score_rolls([10, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])).
 
 %%all_strikes_test() ->
 %%  ?assertEqual(300, score_rolls([10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10])).
