@@ -2,22 +2,22 @@
 -include_lib("eunit/include/eunit.hrl").
 
 gutter_ball_test() ->
-  ?assertEqual(0, score_rolls([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])).
+  ?assertEqual(0, score_rolls(lists:duplicate(20, 0))).
 
 all_ones_test() ->
-  ?assertEqual(20, score_rolls([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])).
+  ?assertEqual(20, score_rolls(lists:duplicate(20, 1))).
 
 spare_test() ->
-  ?assertEqual(20, score_rolls([2, 8, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])).
+  ?assertEqual(20, score_rolls([2, 8, 5] ++ lists:duplicate(17, 0))).
 
 strike_test() ->
-  ?assertEqual(24, score_rolls([10, 3, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])).
+  ?assertEqual(24, score_rolls([10, 3, 4] ++ lists:duplicate(17, 0))).
 
 all_spares_test() ->
-  ?assertEqual(150, score_rolls([5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5])).
+  ?assertEqual(150, score_rolls(lists:duplicate(21, 5))).
 
 all_strikes_test() ->
-  ?assertEqual(300, score_rolls([10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10])).
+  ?assertEqual(300, score_rolls(lists:duplicate(12, 10))).
 
 score_rolls([]) -> 0;
 
